@@ -1,0 +1,6 @@
+Textos relevantes para aprender a desenvolver um sistema operacional:
+- Intel® 64 and IA-32 Architectures Software Developer’s Manual (Volume
+1, 2, 3)
+- Intel® 3 Series Express Chipset Family Datasheet
+- System V Application Binary Interface
+
