@@ -25,3 +25,9 @@ CPUEstrutura inicializacao() {
 
     return cpu;
 }
+
+void executar_ciclo(CPUEstrutura *cpu, uint8_t endereco_de_memoria) {
+    uint8_t valor = buscar(&cpu->memoria, endereco_de_memoria);
+    escrever(&cpu->registradores[0], valor);
+    armazenar(&cpu->memoria, endereco_de_memoria, valor);
+}
