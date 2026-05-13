@@ -13,4 +13,6 @@ add_executable(Operating_Systems_From_0_to_1
         memory.c
         register.c
         memory.h
-        register.h)
+        register.h
+        isa.c
+        isa.h)
