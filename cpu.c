@@ -6,6 +6,10 @@
 CPUEstrutura inicializacao() {
     CPUEstrutura cpu;
     MemoriaEstrutura memoria_estrutura;
+    RegistradorEstrutura pc;
+    sprintf(pc.nome, "%s", "PC");
+    pc.valor_atual = 0;
+    cpu.pc = pc;
 
     for (int i = 0; i < TAMANHO_MEMORIA; i++) {
         memoria_estrutura.memorias[i] = 0;
@@ -26,8 +30,5 @@ CPUEstrutura inicializacao() {
     return cpu;
 }
 
-void executar_ciclo(CPUEstrutura *cpu, uint8_t endereco_de_memoria) {
-    uint8_t valor = buscar(&cpu->memoria, endereco_de_memoria);
-    escrever(&cpu->registradores[0], valor);
-    armazenar(&cpu->memoria, endereco_de_memoria, valor);
+void executar_ciclo(CPUEstrutura *cpu) {
 }
