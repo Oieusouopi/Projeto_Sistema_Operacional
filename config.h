@@ -2,5 +2,6 @@
 #define CONFIG_H
 
 #define TAMANHO_MEMORIA 256
+#define QUANTIDADE_DE_REGISTRADORES 4
 
 #endif
