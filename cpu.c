@@ -3,6 +3,8 @@
 #include <stdio.h>
 #include <string.h>
 
+#include "isa.h"
+
 CPUEstrutura inicializacao() {
     CPUEstrutura cpu;
     MemoriaEstrutura memoria_estrutura;
@@ -10,6 +12,7 @@ CPUEstrutura inicializacao() {
     sprintf(pc.nome, "%s", "PC");
     pc.valor_atual = 0;
     cpu.pc = pc;
+    cpu.rodando = RODANDO;
 
     for (int i = 0; i < TAMANHO_MEMORIA; i++) {
         memoria_estrutura.memorias[i] = 0;
@@ -31,4 +34,8 @@ CPUEstrutura inicializacao() {
 }
 
 void executar_ciclo(CPUEstrutura *cpu) {
+    while (cpu->rodando == RODANDO) {
+        uint8_t opcode = buscar(&cpu->memoria, cpu->pc.valor_atual);
+        decodificador(cpu, opcode);
+    }
 }
